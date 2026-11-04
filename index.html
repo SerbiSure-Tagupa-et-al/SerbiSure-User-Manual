@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SerbiSure Guide — Step-by-Step User Manual</title>
+  <meta name="description" content="Official step-by-step user manual and operational guide for SerbiSure: Homeowners, Kasambahay, and Admin / Barangay." />
+  <link rel="icon" type="image/png" href="./branding/serbisure-icon.png" />
+  <link rel="stylesheet" href="./src/styles.css" />
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Mobile Drawer Backdrop -->
+  <div class="drawer-backdrop" id="drawer-backdrop" aria-hidden="true"></div>
+
+  <header class="app-header" id="app-header">
+    <div class="header-container">
+      <div class="header-brand-row">
+        <a href="#/" class="brand-badge" aria-label="SerbiSure Guide Home">
+          <img src="./branding/serbisure-icon.png" alt="SerbiSure" class="brand-icon" />
+          <div class="brand-titles">
+            <span class="brand-name">Serbi<span>Sure</span></span>
+            <span class="brand-subtitle">User Guide</span>
+          </div>
+        </a>
+
+        <button
+          type="button"
+          class="mobile-menu-btn"
+          id="mobile-menu-toggle"
+          aria-label="Open guide topics menu"
+          aria-expanded="false"
+          aria-controls="app-sidebar"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="4" y1="6" x2="20" y2="6"></line>
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="18" x2="20" y2="18"></line>
+          </svg>
+          <span class="mobile-menu-btn-text">Topics</span>
+        </button>
+      </div>
+
+      <nav class="role-tabs-wrapper" aria-label="Select user role">
+        <div class="role-tabs-nav" id="role-tabs-container" role="tablist"></div>
+      </nav>
+    </div>
+
+    <!-- Mobile Topic Quick Switcher (resolved immediately to current topic, hidden on desktop) -->
+    <div class="mobile-topic-bar" id="mobile-topic-bar">
+      <label for="mobile-module-select" class="mobile-topic-label">Topic:</label>
+      <div class="mobile-topic-select-wrap">
+        <select id="mobile-module-select" class="mobile-module-select" aria-label="Select guide topic"></select>
+        <svg class="select-chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <div class="app-layout">
+    <aside class="app-sidebar" id="app-sidebar" aria-label="Guide modules list">
+      <div class="sidebar-header-bar">
+        <span class="sidebar-header-title">Guide Topics</span>
+        <button
+          type="button"
+          class="sidebar-close-btn"
+          id="sidebar-close-btn"
+          aria-label="Close guide modules menu"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+          <span class="close-text">Close</span>
+        </button>
+      </div>
+      <nav id="module-nav-container" aria-label="Modules list"></nav>
+    </aside>
+
+    <main class="app-main" id="main-content" tabindex="-1">
+      <div id="content-display-area"></div>
+    </main>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
