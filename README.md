@@ -1,5 +1,7 @@
 # SerbiSure User Manual & Guide
 
+Written for SerbiSure app v2.1.5
+
 The official interactive, static user manual and operational guide for **SerbiSure**, serving three primary user roles:
 1. **🏠 Homeowner** — People seeking trusted household help.
 2. **🧹 Kasambahay** — Domestic household workers offering services or applying for jobs.
@@ -73,7 +75,7 @@ SerbiSure-User-Manual/
 ├── index.html                 # Semantic HTML shell
 ├── package.json
 ├── vite.config.js             # Assets inline limit: 0, relative base
-├── SCREENSHOT_CHECKLIST.md    # Master capture checklist (103 entries)
+├── SCREENSHOT_CHECKLIST.md    # Master capture checklist (107 entries)
 ├── CONTENT_REVIEW.md          # Source grounding & verification mapping
 └── CONTENT_AUTHORING.md       # Guide for adding screenshots & modules
 ```
@@ -82,7 +84,7 @@ SerbiSure-User-Manual/
 
 ## 📸 Adding Screenshots
 
-All 103 guide steps are completely written and verified against the application source code. Each step currently displays a polished **"Screenshot coming soon"** placeholder.
+All 107 guide steps have been reviewed against the locally available app `origin/main` source. See [CONTENT_AUDIT.md](CONTENT_AUDIT.md) for the source snapshots and verification limits. Each step currently displays a polished **"Screenshot coming soon"** placeholder.
 
 To add screenshots:
 1. Consult [`SCREENSHOT_CHECKLIST.md`](SCREENSHOT_CHECKLIST.md) for the exact screen and preparation instructions.

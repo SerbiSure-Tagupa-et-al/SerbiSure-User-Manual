@@ -1,5 +1,5 @@
 {
   "title": "Bookings & Digital Village Pass",
-  "overview": "Track active bookings and generate the official 24-hour HMAC-SHA256 Digital Village Pass QR code for security gate entry.",
+  "overview": "Track bookings, refresh the Digital Village Pass and understand the guard?s live entry check.",
   "icon": "calendar"
 }
