@@ -1,0 +1,5 @@
+{
+  "title": "Expired Clearances Management",
+  "overview": "Track expiring worker clearances and run manual batch expiration processing.",
+  "icon": "calendar-x"
+}

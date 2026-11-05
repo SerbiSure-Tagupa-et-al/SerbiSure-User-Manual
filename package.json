@@ -1,0 +1,28 @@
+{
+  "name": "serbisure-user-manual",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Clean, lightweight, static User Manual website for SerbiSure",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "node scripts/validate-docs.mjs && vite build",
+    "preview": "vite preview",
+    "validate:docs": "node scripts/validate-docs.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "test:e2e": "node tests/responsive-verification.mjs",
+    "test:audit": "node tests/pass2-browser-audit.mjs",
+    "test:prod": "node tests/pass3-production-readiness.mjs"
+  },
+  "dependencies": {
+    "dompurify": "^3.2.4",
+    "marked": "^15.0.7"
+  },
+  "devDependencies": {
+    "playwright": "^1.64.1",
+    "vite": "^6.2.0"
+  }
+}

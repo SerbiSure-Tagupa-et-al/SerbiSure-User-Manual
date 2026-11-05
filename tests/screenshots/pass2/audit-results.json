@@ -1,0 +1,183 @@
+{
+  "viewports": [
+    {
+      "id": "01_small_phone",
+      "name": "Small phone (320x568)",
+      "width": 320,
+      "height": 568,
+      "overflow": "None (0px)",
+      "roles": "3 tabs (Homeowner | Kasambahay | Admin / Barangay)",
+      "tapTargetsCheck": "Passed (all >= 44px)",
+      "stepHeading": "Step 1: Start Registration & Select Home...",
+      "placeholderSafe": "Safe (no path leaks)",
+      "status": "PASSED"
+    },
+    {
+      "id": "02_budget_android",
+      "name": "Budget Android (360x800)",
+      "width": 360,
+      "height": 800,
+      "overflow": "None (0px)",
+      "roles": "3 tabs (Homeowner | Kasambahay | Admin / Barangay)",
+      "tapTargetsCheck": "Passed (all >= 44px)",
+      "stepHeading": "Step 1: Start Registration & Select Home...",
+      "placeholderSafe": "Safe (no path leaks)",
+      "status": "PASSED"
+    },
+    {
+      "id": "03_common_phone",
+      "name": "Common phone (390x844)",
+      "width": 390,
+      "height": 844,
+      "overflow": "None (0px)",
+      "roles": "3 tabs (Homeowner | Kasambahay | Admin / Barangay)",
+      "tapTargetsCheck": "Passed (all >= 44px)",
+      "stepHeading": "Step 1: Start Registration & Select Home...",
+      "placeholderSafe": "Safe (no path leaks)",
+      "status": "PASSED"
+    },
+    {
+      "id": "04_large_phone",
+      "name": "Large phone (430x932)",
+      "width": 430,
+      "height": 932,
+      "overflow": "None (0px)",
+      "roles": "3 tabs (Homeowner | Kasambahay | Admin / Barangay)",
+      "tapTargetsCheck": "Passed (all >= 44px)",
+      "stepHeading": "Step 1: Start Registration & Select Home...",
+      "placeholderSafe": "Safe (no path leaks)",
+      "status": "PASSED"
+    },
+    {
+      "id": "05_tablet_portrait",
+      "name": "Tablet portrait (768x1024)",
+      "width": 768,
+      "height": 1024,
+      "overflow": "None (0px)",
+      "roles": "3 tabs (Homeowner | Kasambahay | Admin / Barangay)",
+      "tapTargetsCheck": "Passed (all >= 44px)",
+      "stepHeading": "Step 1: Start Registration & Select Home...",
+      "placeholderSafe": "Safe (no path leaks)",
+      "status": "PASSED"
+    },
+    {
+      "id": "06_tablet_landscape",
+      "name": "Tablet landscape (1024x768)",
+      "width": 1024,
+      "height": 768,
+      "overflow": "None (0px)",
+      "roles": "3 tabs (Homeowner | Kasambahay | Admin / Barangay)",
+      "tapTargetsCheck": "Passed (all >= 44px)",
+      "stepHeading": "Step 1: Start Registration & Select Home...",
+      "placeholderSafe": "Safe (no path leaks)",
+      "status": "PASSED"
+    },
+    {
+      "id": "07_laptop",
+      "name": "Laptop (1366x768)",
+      "width": 1366,
+      "height": 768,
+      "overflow": "None (0px)",
+      "roles": "3 tabs (Homeowner | Kasambahay | Admin / Barangay)",
+      "tapTargetsCheck": "Passed (all >= 44px)",
+      "stepHeading": "Step 1: Start Registration & Select Home...",
+      "placeholderSafe": "Safe (no path leaks)",
+      "status": "PASSED"
+    },
+    {
+      "id": "08_desktop",
+      "name": "Desktop 1080p (1920x1080)",
+      "width": 1920,
+      "height": 1080,
+      "overflow": "None (0px)",
+      "roles": "3 tabs (Homeowner | Kasambahay | Admin / Barangay)",
+      "tapTargetsCheck": "Passed (all >= 44px)",
+      "stepHeading": "Step 1: Start Registration & Select Home...",
+      "placeholderSafe": "Safe (no path leaks)",
+      "status": "PASSED"
+    },
+    {
+      "id": "09_phone_landscape",
+      "name": "Phone landscape (844x390)",
+      "width": 844,
+      "height": 390,
+      "overflow": "None (0px)",
+      "roles": "3 tabs (Homeowner | Kasambahay | Admin / Barangay)",
+      "tapTargetsCheck": "Passed (all >= 44px)",
+      "stepHeading": "Step 1: Start Registration & Select Home...",
+      "placeholderSafe": "Safe (no path leaks)",
+      "status": "PASSED"
+    },
+    {
+      "id": "10_zoom200_on_1280",
+      "name": "200% zoom simulation on 1280 (640x800)",
+      "width": 640,
+      "height": 800,
+      "overflow": "None (0px)",
+      "roles": "3 tabs (Homeowner | Kasambahay | Admin / Barangay)",
+      "tapTargetsCheck": "Passed (all >= 44px)",
+      "stepHeading": "Step 1: Start Registration & Select Home...",
+      "placeholderSafe": "Safe (no path leaks)",
+      "status": "PASSED"
+    },
+    {
+      "id": "11_zoom200_on_1920",
+      "name": "200% zoom simulation on 1920 (960x1080)",
+      "width": 960,
+      "height": 1080,
+      "overflow": "None (0px)",
+      "roles": "3 tabs (Homeowner | Kasambahay | Admin / Barangay)",
+      "tapTargetsCheck": "Passed (all >= 44px)",
+      "stepHeading": "Step 1: Start Registration & Select Home...",
+      "placeholderSafe": "Safe (no path leaks)",
+      "status": "PASSED"
+    }
+  ],
+  "interactions": {
+    "roleSwitching": true,
+    "stepDropdownJump": true,
+    "stepBoundaries": true,
+    "browserHistory": true,
+    "deepLinkReload": true,
+    "mobileDrawer": true,
+    "lightbox": true,
+    "keyboardFocus": true
+  },
+  "walkthroughs": {
+    "homeowner": true,
+    "kasambahay": true,
+    "admin": true
+  },
+  "nonTechnicalChecks": {
+    "roleClear": true,
+    "guideClear": true,
+    "stepProgressClear": true,
+    "stepBadgeText": "Step 1 of 5",
+    "isNextActionObvious": true,
+    "isSingleWindowScroll": true
+  },
+  "screenshotsCaptured": [
+    "C:\\VS_CODE_FILE\\SerbisureLastest\\SerbiSure-User-Manual\\tests\\screenshots\\pass2\\viewport_01_small_phone.png",
+    "C:\\VS_CODE_FILE\\SerbisureLastest\\SerbiSure-User-Manual\\tests\\screenshots\\pass2\\viewport_02_budget_android.png",
+    "C:\\VS_CODE_FILE\\SerbisureLastest\\SerbiSure-User-Manual\\tests\\screenshots\\pass2\\viewport_03_common_phone.png",
+    "C:\\VS_CODE_FILE\\SerbisureLastest\\SerbiSure-User-Manual\\tests\\screenshots\\pass2\\viewport_04_large_phone.png",
+    "C:\\VS_CODE_FILE\\SerbisureLastest\\SerbiSure-User-Manual\\tests\\screenshots\\pass2\\viewport_05_tablet_portrait.png",
+    "C:\\VS_CODE_FILE\\SerbisureLastest\\SerbiSure-User-Manual\\tests\\screenshots\\pass2\\viewport_06_tablet_landscape.png",
+    "C:\\VS_CODE_FILE\\SerbisureLastest\\SerbiSure-User-Manual\\tests\\screenshots\\pass2\\viewport_07_laptop.png",
+    "C:\\VS_CODE_FILE\\SerbisureLastest\\SerbiSure-User-Manual\\tests\\screenshots\\pass2\\viewport_08_desktop.png",
+    "C:\\VS_CODE_FILE\\SerbisureLastest\\SerbiSure-User-Manual\\tests\\screenshots\\pass2\\viewport_09_phone_landscape.png",
+    "C:\\VS_CODE_FILE\\SerbisureLastest\\SerbiSure-User-Manual\\tests\\screenshots\\pass2\\viewport_10_zoom200_on_1280.png",
+    "C:\\VS_CODE_FILE\\SerbisureLastest\\SerbiSure-User-Manual\\tests\\screenshots\\pass2\\viewport_11_zoom200_on_1920.png",
+    "C:\\VS_CODE_FILE\\SerbisureLastest\\SerbiSure-User-Manual\\tests\\screenshots\\pass2\\drawer_open_mobile.png",
+    "C:\\VS_CODE_FILE\\SerbisureLastest\\SerbiSure-User-Manual\\tests\\screenshots\\pass2\\lightbox_open_normal.png",
+    "C:\\VS_CODE_FILE\\SerbisureLastest\\SerbiSure-User-Manual\\tests\\screenshots\\pass2\\lightbox_zoomed_100.png",
+    "C:\\VS_CODE_FILE\\SerbisureLastest\\SerbiSure-User-Manual\\tests\\screenshots\\pass2\\walkthrough_homeowner_step1.png",
+    "C:\\VS_CODE_FILE\\SerbisureLastest\\SerbiSure-User-Manual\\tests\\screenshots\\pass2\\walkthrough_homeowner_step3.png",
+    "C:\\VS_CODE_FILE\\SerbisureLastest\\SerbiSure-User-Manual\\tests\\screenshots\\pass2\\walkthrough_homeowner_step5.png",
+    "C:\\VS_CODE_FILE\\SerbisureLastest\\SerbiSure-User-Manual\\tests\\screenshots\\pass2\\walkthrough_kasambahay_step1.png",
+    "C:\\VS_CODE_FILE\\SerbisureLastest\\SerbiSure-User-Manual\\tests\\screenshots\\pass2\\walkthrough_kasambahay_step3.png",
+    "C:\\VS_CODE_FILE\\SerbisureLastest\\SerbiSure-User-Manual\\tests\\screenshots\\pass2\\walkthrough_admin_step1.png",
+    "C:\\VS_CODE_FILE\\SerbisureLastest\\SerbiSure-User-Manual\\tests\\screenshots\\pass2\\walkthrough_admin_step3.png",
+    "C:\\VS_CODE_FILE\\SerbisureLastest\\SerbiSure-User-Manual\\tests\\screenshots\\pass2\\walkthrough_admin_step6.png"
+  ]
+}
