@@ -104,91 +104,91 @@ This checklist contains every screen to capture for the **SerbiSure User Manual*
 
 | Status | Step | Step Title | Screen to Capture / Preparation | Target Image Destination |
 | :---: | :---: | :--- | :--- | :--- |
-| - [ ] | **1** | Choose the Kasambahay Worker Role | Role selection screen titled "How would you like to join?" showing the "I am a Kasambahay" card button | `docs/kasambahay/01-registration/screenshots/1.png` |
-| - [ ] | **2** | Fill In Personal and Account Details | RE-CAPTURE: Registration personal details form, including +63 phone field, password and Next. | `docs/kasambahay/01-registration/screenshots/2.png` |
-| - [ ] | **3** | Select Services You Offer | RE-CAPTURE: Worker registration work-profile form with SERVICES YOU OFFER expanded. | `docs/kasambahay/01-registration/screenshots/3.png` |
-| - [ ] | **4** | Choose Work Preferences and Rates | RE-CAPTURE: Worker registration work-profile form showing work preferences and expected monthly/daily rates. | `docs/kasambahay/01-registration/screenshots/4.png` |
-| - [ ] | **5** | Fill In Your Background | RE-CAPTURE: Lower worker registration work-profile form showing experience, education, civil status and children. | `docs/kasambahay/01-registration/screenshots/5.png` |
-| - [ ] | **6** | Enter Your Address and Give Consent | RE-CAPTURE: Worker address form with location selectors, street, ZIP and both consent boxes. | `docs/kasambahay/01-registration/screenshots/6.png` |
+| - [x] | **1** | Choose the Kasambahay Worker Role | Role selection screen titled "How would you like to join?" showing the "I am a Kasambahay" card button | `docs/kasambahay/01-registration/screenshots/1.png` |
+| - [x] | **2** | Fill In Personal and Account Details | RE-CAPTURE: Registration personal details form, including +63 phone field, password and Next. | `docs/kasambahay/01-registration/screenshots/2.png` |
+| - [x] | **3** | Select Services You Offer | RE-CAPTURE: Worker registration work-profile form with SERVICES YOU OFFER expanded. | `docs/kasambahay/01-registration/screenshots/3.png` |
+| - [x] | **4** | Choose Work Preferences and Rates | RE-CAPTURE: Worker registration work-profile form showing work preferences and expected monthly/daily rates. | `docs/kasambahay/01-registration/screenshots/4.png` |
+| - [x] | **5** | Fill In Your Background | RE-CAPTURE: Lower worker registration work-profile form showing experience, education, civil status and children. | `docs/kasambahay/01-registration/screenshots/5.png` |
+| - [x] | **6** | Enter Your Address and Give Consent | RE-CAPTURE: Worker address form with location selectors, street, ZIP and both consent boxes. | `docs/kasambahay/01-registration/screenshots/6.png` |
 
 ### Module: Kasambahay Login (`kasambahay/02-login`)
 
 | Status | Step | Step Title | Screen to Capture / Preparation | Target Image Destination |
 | :---: | :---: | :--- | :--- | :--- |
-| - [ ] | **1** | Open the SerbiSure App to the Sign In Screen | Mobile app screen showing open the serbisure app to the sign in screen | `docs/kasambahay/02-login/screenshots/1.png` |
-| - [ ] | **2** | Enter Your Contact Number and Password | Mobile app screen showing enter your contact number and password | `docs/kasambahay/02-login/screenshots/2.png` |
-| - [ ] | **3** | One-Tap Sign In with Saved Profile | Mobile app screen showing one-tap sign in with saved profile | `docs/kasambahay/02-login/screenshots/3.png` |
+| - [x] | **1** | Open the SerbiSure App to the Sign In Screen | Mobile app screen showing open the serbisure app to the sign in screen | `docs/kasambahay/02-login/screenshots/1.png` |
+| - [x] | **2** | Enter Your Contact Number and Password | Mobile app screen showing enter your contact number and password | `docs/kasambahay/02-login/screenshots/2.png` |
+| - [x] | **3** | One-Tap Sign In with Saved Profile | Mobile app screen showing one-tap sign in with saved profile | `docs/kasambahay/02-login/screenshots/3.png` |
 
 ### Module: Identity & Liveness Verification (`kasambahay/03-identity-and-liveness-verification`)
 
 | Status | Step | Step Title | Screen to Capture / Preparation | Target Image Destination |
 | :---: | :---: | :--- | :--- | :--- |
-| - [ ] | **1** | Open Document Verification | RE-CAPTURE: Profile settings showing Get Verified and the current verification status. | `docs/kasambahay/03-identity-and-liveness-verification/screenshots/1.png` |
-| - [ ] | **2** | Select Your NBI Clearance | RE-CAPTURE: Document Verification upload area with NBI Clearance and Police Clearance cards. | `docs/kasambahay/03-identity-and-liveness-verification/screenshots/2.png` |
-| - [ ] | **3** | Submit Both Required Clearances | RE-CAPTURE: Document Verification with both clearance images selected and Submit Documents visible. | `docs/kasambahay/03-identity-and-liveness-verification/screenshots/3.png` |
-| - [ ] | **4** | Check Your Face Photo | RE-CAPTURE: Profile avatar status pop-up with a rejected test photo, reviewer note and Retake Photo; no rejection banner at top of Profile. | `docs/kasambahay/03-identity-and-liveness-verification/screenshots/4.png` |
-| - [ ] | **5** | Read the Review Results | RE-CAPTURE: Document Verification Submitted Documents list showing real status labels and reviewer feedback. | `docs/kasambahay/03-identity-and-liveness-verification/screenshots/5.png` |
+| - [x] | **1** | Open Document Verification | RE-CAPTURE: Profile settings showing Get Verified and the current verification status. | `docs/kasambahay/03-identity-and-liveness-verification/screenshots/1.png` |
+| - [x] | **2** | Select Your NBI Clearance | RE-CAPTURE: Document Verification upload area with NBI Clearance and Police Clearance cards. | `docs/kasambahay/03-identity-and-liveness-verification/screenshots/2.png` |
+| - [x] | **3** | Submit Both Required Clearances | RE-CAPTURE: Document Verification with both clearance images selected and Submit Documents visible. | `docs/kasambahay/03-identity-and-liveness-verification/screenshots/3.png` |
+| - [x] | **4** | Check Your Face Photo | RE-CAPTURE: Profile avatar status pop-up with a rejected test photo, reviewer note and Retake Photo; no rejection banner at top of Profile. | `docs/kasambahay/03-identity-and-liveness-verification/screenshots/4.png` |
+| - [x] | **5** | Read the Review Results | RE-CAPTURE: Document Verification Submitted Documents list showing real status labels and reviewer feedback. | `docs/kasambahay/03-identity-and-liveness-verification/screenshots/5.png` |
 
 ### Module: Clearance Expiry & Renewal (`kasambahay/04-clearance-renewal`)
 
 | Status | Step | Step Title | Screen to Capture / Preparation | Target Image Destination |
 | :---: | :---: | :--- | :--- | :--- |
-| - [ ] | **1** | Check for an Expired Clearance | RE-CAPTURE: Profile Renewal needed notice for an expired required clearance. | `docs/kasambahay/04-clearance-renewal/screenshots/1.png` |
-| - [ ] | **2** | Open the Renewal Upload | RE-CAPTURE: Expired clearance row with its date and Upload renewed clearance button. | `docs/kasambahay/04-clearance-renewal/screenshots/2.png` |
-| - [ ] | **3** | Submit the Renewed Clearance | RE-CAPTURE: Document Verification renewal upload with the new clearance selected and Submit Documents visible. | `docs/kasambahay/04-clearance-renewal/screenshots/3.png` |
+| - [x] | **1** | Check for an Expired Clearance | RE-CAPTURE: Profile Renewal needed notice for an expired required clearance. | `docs/kasambahay/04-clearance-renewal/screenshots/1.png` |
+| - [x] | **2** | Open the Renewal Upload | RE-CAPTURE: Expired clearance row with its date and Upload renewed clearance button. | `docs/kasambahay/04-clearance-renewal/screenshots/2.png` |
+| - [x] | **3** | Submit the Renewed Clearance | RE-CAPTURE: Document Verification renewal upload with the new clearance selected and Submit Documents visible. | `docs/kasambahay/04-clearance-renewal/screenshots/3.png` |
 
 ### Module: Worker Profile & Generated CV (`kasambahay/05-worker-cv-builder`)
 
 | Status | Step | Step Title | Screen to Capture / Preparation | Target Image Destination |
 | :---: | :---: | :--- | :--- | :--- |
-| - [ ] | **1** | Open Your Worker CV | RE-CAPTURE: SerbiSure CV view with the pencil Edit CV control, View PDF and Download PDF. | `docs/kasambahay/05-worker-cv-builder/screenshots/1.png` |
-| - [ ] | **2** | Edit Services, Rates and Experience | RE-CAPTURE: Upper Edit CV Details form showing services, work preferences, rates, languages, experience and optional skill selector. | `docs/kasambahay/05-worker-cv-builder/screenshots/2.png` |
-| - [ ] | **3** | Edit Personal Details and Save | RE-CAPTURE: Lower Edit CV Details form showing education, civil status, children, Cancel and Update. | `docs/kasambahay/05-worker-cv-builder/screenshots/3.png` |
-| - [ ] | **4** | View or Download the PDF | RE-CAPTURE: Saved SerbiSure CV with View PDF and Download PDF visible. | `docs/kasambahay/05-worker-cv-builder/screenshots/4.png` |
+| - [x] | **1** | Open Your Worker CV | RE-CAPTURE: SerbiSure CV view with the pencil Edit CV control, View PDF and Download PDF. | `docs/kasambahay/05-worker-cv-builder/screenshots/1.png` |
+| - [x] | **2** | Edit Services, Rates and Experience | RE-CAPTURE: Upper Edit CV Details form showing services, work preferences, rates, languages, experience and optional skill selector. | `docs/kasambahay/05-worker-cv-builder/screenshots/2.png` |
+| - [x] | **3** | Edit Personal Details and Save | RE-CAPTURE: Lower Edit CV Details form showing education, civil status, children, Cancel and Update. | `docs/kasambahay/05-worker-cv-builder/screenshots/3.png` |
+| - [x] | **4** | View or Download the PDF | RE-CAPTURE: Saved SerbiSure CV with View PDF and Download PDF visible. | `docs/kasambahay/05-worker-cv-builder/screenshots/4.png` |
 
 ### Module: Browse Jobs & Apply (`kasambahay/06-browse-jobs-and-apply`)
 
 | Status | Step | Step Title | Screen to Capture / Preparation | Target Image Destination |
 | :---: | :---: | :--- | :--- | :--- |
-| - [ ] | **1** | Browse Public Posts | RE-CAPTURE: Home Recent Posts card showing owner name/photo and description; capture the homeowner post appropriate to this role. | `docs/kasambahay/06-browse-jobs-and-apply/screenshots/1.png` |
-| - [ ] | **2** | Filter the Posts | RE-CAPTURE: Filter & Sort panel showing categories, booking type, setup, maximum rate and location; no minimum-rating control. | `docs/kasambahay/06-browse-jobs-and-apply/screenshots/2.png` |
-| - [ ] | **3** | Read the Full Job Details | RE-CAPTURE: Job details sheet showing ABOUT THIS ROLE, Work hours and Apply Now, without dates. | `docs/kasambahay/06-browse-jobs-and-apply/screenshots/3.png` |
-| - [ ] | **4** | Apply for the Job | RE-CAPTURE: Job details sheet before tapping Apply Now. | `docs/kasambahay/06-browse-jobs-and-apply/screenshots/4.png` |
-| - [ ] | **5** | Discuss Dates with the Homeowner | RE-CAPTURE: Chat opened from a job application, with the application context and message input visible. | `docs/kasambahay/06-browse-jobs-and-apply/screenshots/5.png` |
+| - [x] | **1** | Browse Public Posts | RE-CAPTURE: Home Recent Posts card showing owner name/photo and description; capture the homeowner post appropriate to this role. | `docs/kasambahay/06-browse-jobs-and-apply/screenshots/1.png` |
+| - [x] | **2** | Filter the Posts | RE-CAPTURE: Filter & Sort panel showing categories, booking type, setup, maximum rate and location; no minimum-rating control. | `docs/kasambahay/06-browse-jobs-and-apply/screenshots/2.png` |
+| - [x] | **3** | Read the Full Job Details | RE-CAPTURE: Job details sheet showing ABOUT THIS ROLE, Work hours and Apply Now, without dates. | `docs/kasambahay/06-browse-jobs-and-apply/screenshots/3.png` |
+| - [x] | **4** | Apply for the Job | RE-CAPTURE: Job details sheet before tapping Apply Now. | `docs/kasambahay/06-browse-jobs-and-apply/screenshots/4.png` |
+| - [x] | **5** | Discuss Dates with the Homeowner | RE-CAPTURE: Chat opened from a job application, with the application context and message input visible. | `docs/kasambahay/06-browse-jobs-and-apply/screenshots/5.png` |
 
 ### Module: Post a Service Advertisement (`kasambahay/07-post-a-service`)
 
 | Status | Step | Step Title | Screen to Capture / Preparation | Target Image Destination |
 | :---: | :---: | :--- | :--- | :--- |
-| - [ ] | **1** | Open Post a Service | RE-CAPTURE: Main app screen with the plus Create a post button beside the bottom bar, signed in as service poster. | `docs/kasambahay/07-post-a-service/screenshots/1.png` |
-| - [ ] | **2** | Choose Services and Work Type | RE-CAPTURE: Post a Service, Step 1 of 3, with services, ENGAGEMENT, WORK SETUP and Next. | `docs/kasambahay/07-post-a-service/screenshots/2.png` |
-| - [ ] | **3** | Set Location and Daily Hours | RE-CAPTURE: Post a Service Step 2 of 3 showing location and Work hours; no date or weekday controls. | `docs/kasambahay/07-post-a-service/screenshots/3.png` |
-| - [ ] | **4** | Add Your Notes and Expected Rate | RE-CAPTURE: Post a Service Step 2 showing ABOUT YOU (OPTIONAL), OFFER AMOUNT and Next. | `docs/kasambahay/07-post-a-service/screenshots/4.png` |
-| - [ ] | **5** | Review and Post Your Service | RE-CAPTURE: Post a Service Step 3 of 3 showing preview, summary, agreement and Post Service. | `docs/kasambahay/07-post-a-service/screenshots/5.png` |
+| - [x] | **1** | Open Post a Service | RE-CAPTURE: Main app screen with the plus Create a post button beside the bottom bar, signed in as service poster. | `docs/kasambahay/07-post-a-service/screenshots/1.png` |
+| - [x] | **2** | Choose Services and Work Type | RE-CAPTURE: Post a Service, Step 1 of 3, with services, ENGAGEMENT, WORK SETUP and Next. | `docs/kasambahay/07-post-a-service/screenshots/2.png` |
+| - [x] | **3** | Set Location and Daily Hours | RE-CAPTURE: Post a Service Step 2 of 3 showing location and Work hours; no date or weekday controls. | `docs/kasambahay/07-post-a-service/screenshots/3.png` |
+| - [x] | **4** | Add Your Notes and Expected Rate | RE-CAPTURE: Post a Service Step 2 showing ABOUT YOU (OPTIONAL), OFFER AMOUNT and Next. | `docs/kasambahay/07-post-a-service/screenshots/4.png` |
+| - [x] | **5** | Review and Post Your Service | RE-CAPTURE: Post a Service Step 3 of 3 showing preview, summary, agreement and Post Service. | `docs/kasambahay/07-post-a-service/screenshots/5.png` |
 
 ### Module: Chat & Booking Offers (`kasambahay/08-chat-and-offers`)
 
 | Status | Step | Step Title | Screen to Capture / Preparation | Target Image Destination |
 | :---: | :---: | :--- | :--- | :--- |
-| - [ ] | **1** | Open Messages to View Homeowner Inquiries | Mobile app screen showing open messages to view homeowner inquiries | `docs/kasambahay/08-chat-and-offers/screenshots/1.png` |
-| - [ ] | **2** | Review a Booking Offer | RE-CAPTURE: Received booking offer review showing the saved dates, hours, work days, address and pay. | `docs/kasambahay/08-chat-and-offers/screenshots/2.png` |
-| - [ ] | **3** | Accept or Decline the Offer | RE-CAPTURE: Received booking offer with Accept and Decline controls visible. | `docs/kasambahay/08-chat-and-offers/screenshots/3.png` |
+| - [x] | **1** | Open Messages to View Homeowner Inquiries | Mobile app screen showing open messages to view homeowner inquiries | `docs/kasambahay/08-chat-and-offers/screenshots/1.png` |
+| - [x] | **2** | Review a Booking Offer | RE-CAPTURE: Received booking offer review showing the saved dates, hours, work days, address and pay. | `docs/kasambahay/08-chat-and-offers/screenshots/2.png` |
+| - [x] | **3** | Accept or Decline the Offer | RE-CAPTURE: Received booking offer with Accept and Decline controls visible. | `docs/kasambahay/08-chat-and-offers/screenshots/3.png` |
 
 ### Module: Schedules & Digital Village Pass (`kasambahay/09-booking-schedules-and-village-pass`)
 
 | Status | Step | Step Title | Screen to Capture / Preparation | Target Image Destination |
 | :---: | :---: | :--- | :--- | :--- |
-| - [ ] | **1** | Open Your Bookings | RE-CAPTURE: My Jobs & Contracts list with its five tabs and Details buttons. | `docs/kasambahay/09-booking-schedules-and-village-pass/screenshots/1.png` |
-| - [ ] | **2** | Open and Refresh the Digital Village Pass | RE-CAPTURE: Booking details from a job-post application showing Digital Village Pass and BK code; redact the signed QR. | `docs/kasambahay/09-booking-schedules-and-village-pass/screenshots/2.png` |
-| - [ ] | **3** | Show the Pass to the Guard | RE-CAPTURE: Guard public pass page for a pending test application showing amber Do not enter yet; redact signed link. | `docs/kasambahay/09-booking-schedules-and-village-pass/screenshots/3.png` |
+| - [x] | **1** | Open Your Bookings | RE-CAPTURE: My Jobs & Contracts list with its five tabs and Details buttons. | `docs/kasambahay/09-booking-schedules-and-village-pass/screenshots/1.png` |
+| - [x] | **2** | Open and Refresh the Digital Village Pass | RE-CAPTURE: Booking details from a job-post application showing Digital Village Pass and BK code; redact the signed QR. | `docs/kasambahay/09-booking-schedules-and-village-pass/screenshots/2.png` |
+| - [x] | **3** | Show the Pass to the Guard | RE-CAPTURE: Guard public pass page for a pending test application showing amber Do not enter yet; redact signed link. | `docs/kasambahay/09-booking-schedules-and-village-pass/screenshots/3.png` |
 
 ### Module: Completed Jobs & Reputation (`kasambahay/10-completed-jobs-and-reviews`)
 
 | Status | Step | Step Title | Screen to Capture / Preparation | Target Image Destination |
 | :---: | :---: | :--- | :--- | :--- |
-| - [ ] | **1** | Record Job Completion | RE-CAPTURE: My Jobs & Contracts Ongoing booking card showing Complete. | `docs/kasambahay/10-completed-jobs-and-reviews/screenshots/1.png` |
-| - [ ] | **2** | Read Feedback on Your Profile | RE-CAPTURE: Personal Info with Reviews & Feedbacks selected, rating and positive-feedback summary visible. | `docs/kasambahay/10-completed-jobs-and-reviews/screenshots/2.png` |
-| - [ ] | **3** | Review Your Experience with the Homeowner | RE-CAPTURE: Review form for the homeowner showing stars, YOUR EXPERIENCE and Submit Review. | `docs/kasambahay/10-completed-jobs-and-reviews/screenshots/3.png` |
+| - [x] | **1** | Record Job Completion | RE-CAPTURE: My Jobs & Contracts Ongoing booking card showing Complete. | `docs/kasambahay/10-completed-jobs-and-reviews/screenshots/1.png` |
+| - [x] | **2** | Read Feedback on Your Profile | RE-CAPTURE: Personal Info with Reviews & Feedbacks selected, rating and positive-feedback summary visible. | `docs/kasambahay/10-completed-jobs-and-reviews/screenshots/2.png` |
+| - [x] | **3** | Review Your Experience with the Homeowner | RE-CAPTURE: Review form for the homeowner showing stars, YOUR EXPERIENCE and Submit Review. | `docs/kasambahay/10-completed-jobs-and-reviews/screenshots/3.png` |
 
 
 # 🏛️ Admin / Barangay Guides
@@ -265,6 +265,6 @@ This checklist contains every screen to capture for the **SerbiSure User Manual*
 | Status | Step | Step Title | Screen to Capture / Preparation | Target Image Destination |
 | --- | --- | --- | --- | --- |
 | - [x] | **6** | Check Your Profile Photo Review | NEW: Profile avatar status pop-up; use a rejected test photo so Note from reviewer and Retake Photo are visible. | `docs/homeowner/01-registration-and-profile/screenshots/6.png` |
-| - [ ] | **7** | Take Your Registration Face Photo | NEW: Worker Face Verification captured-selfie review with Retake Photo and Use This Photo. | `docs/kasambahay/01-registration/screenshots/7.png` |
-| - [ ] | **8** | Submit Your Worker Clearances | NEW: Worker Identity Documents screen showing separate NBI Clearance and Police Clearance upload cards. | `docs/kasambahay/01-registration/screenshots/8.png` |
+| - [x] | **7** | Take Your Registration Face Photo | NEW: Worker Face Verification captured-selfie review with Retake Photo and Use This Photo. | `docs/kasambahay/01-registration/screenshots/7.png` |
+| - [x] | **8** | Submit Your Worker Clearances | NEW: Worker Identity Documents screen showing separate NBI Clearance and Police Clearance upload cards. | `docs/kasambahay/01-registration/screenshots/8.png` |
 | - [x] | **7** | Review the Profile Photo | Profile Photo review panel with loaded test photo, required rejection reason, Approve Photo and Reject Photo. | `docs/admin/03-verification-queue-and-ocr/screenshots/7.png` |
