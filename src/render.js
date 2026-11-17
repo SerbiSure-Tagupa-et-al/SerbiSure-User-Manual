@@ -41,8 +41,9 @@ export function renderMarkdown(rawMarkdown = '') {
     />\s*\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\s*\n((?:>.*\n?)*)/gi,
     (match, alertType, body) => {
       const type = alertType.toLowerCase();
-      const cleanBody = body.replace(/^>\s?/gm, '');
-      return `<div class="callout callout-${type}"><span class="callout-tag">${alertType}</span>\n<div class="callout-content">${cleanBody}</div></div>\n`;
+      const cleanBody = body.replace(/^>\s?/gm, '').trim();
+      const renderedBody = marked.parseInline(cleanBody);
+      return `<div class="callout callout-${type}"><span class="callout-tag">${alertType}</span>\n<div class="callout-content">${renderedBody}</div></div>\n`;
     }
   );
 
@@ -142,16 +143,33 @@ export function renderMobileModuleSelect(selectElement, modules = [], activeRole
 /**
  * Renders the module navigation list in sidebar/drawer.
  */
-export function renderModuleList(container, modules = [], activeRoleId, activeModuleFolder, onLinkClick) {
+export function renderModuleList(container, modules = [], activeRoleId, activeModuleFolder, onLinkClick, isFullManualActive = false) {
   if (!container) return;
   container.innerHTML = '';
 
+  // Full Manual & Table of Contents Quick Entry at top of Sidebar
+  const fullManualBox = document.createElement('div');
+  fullManualBox.className = 'sidebar-full-manual-box';
+  const fullManualLink = document.createElement('a');
+  fullManualLink.href = '#/full-manual';
+  fullManualLink.className = `full-manual-sidebar-btn ${isFullManualActive ? 'active' : ''}`;
+  fullManualLink.setAttribute('aria-current', isFullManualActive ? 'page' : 'false');
+  fullManualLink.innerHTML = `
+    <span class="mod-icon" aria-hidden="true">${getIconSvg('list')}</span>
+    <span class="mod-title">Full Manual &amp; Table of Contents</span>
+    <span class="mod-step-badge">All Docs</span>
+  `;
+  if (typeof onLinkClick === 'function') {
+    fullManualLink.addEventListener('click', onLinkClick);
+  }
+  fullManualBox.appendChild(fullManualLink);
+  container.appendChild(fullManualBox);
+
   if (!modules || modules.length === 0) {
-    container.innerHTML = `
-      <div class="empty-modules-notice">
-        <p>No guides available for this role yet.</p>
-      </div>
-    `;
+    const notice = document.createElement('div');
+    notice.className = 'empty-modules-notice';
+    notice.innerHTML = `<p>No guides available for this role yet.</p>`;
+    container.appendChild(notice);
     return;
   }
 
@@ -160,7 +178,7 @@ export function renderModuleList(container, modules = [], activeRoleId, activeMo
   list.setAttribute('role', 'list');
 
   for (const mod of modules) {
-    const isActive = mod.folder === activeModuleFolder;
+    const isActive = !isFullManualActive && mod.folder === activeModuleFolder;
     const firstStep = mod.steps[0];
     const stepNum = firstStep ? firstStep.number : 1;
     const targetHash = formatHash(activeRoleId, mod.folder, stepNum);
@@ -215,11 +233,23 @@ export function renderMainContent({
   const headerCard = document.createElement('header');
   headerCard.className = 'module-header-card';
   headerCard.innerHTML = `
-    <nav class="module-breadcrumb" aria-label="Breadcrumb">
-      <span class="breadcrumb-role">${escapeHtml(roleData.label)}</span>
-      <span class="breadcrumb-separator" aria-hidden="true">›</span>
-      <span class="breadcrumb-current">${escapeHtml(moduleData.title)}</span>
-    </nav>
+    <div class="module-header-top-row">
+      <nav class="module-breadcrumb" aria-label="Breadcrumb">
+        <span class="breadcrumb-role">${escapeHtml(roleData.label)}</span>
+        <span class="breadcrumb-separator" aria-hidden="true">›</span>
+        <span class="breadcrumb-current">${escapeHtml(moduleData.title)}</span>
+      </nav>
+      <div class="module-doc-actions">
+        <a href="#/full-manual" class="doc-action-pill" title="Open Full User Manual with Table of Contents">
+          ${getIconSvg('list')}
+          <span>Full Manual &amp; TOC</span>
+        </a>
+        <a href="./SerbiSure-User-Manual.docx" download="SerbiSure-User-Manual.docx" class="doc-action-pill secondary" title="Download Complete User Manual as Word (.docx)">
+          ${getIconSvg('download')}
+          <span>Download .docx</span>
+        </a>
+      </div>
+    </div>
     <h1 class="module-title">${escapeHtml(moduleData.title)}</h1>
     ${moduleData.overview ? `<p class="module-overview">${escapeHtml(moduleData.overview)}</p>` : ''}
   `;
@@ -447,3 +477,349 @@ export function renderMainContent({
     stepCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, 10);
 }
+
+/**
+ * Renders the Full User Manual (Table of Contents + Continuous Document View)
+ * covering the complete Application to Admin flow across all three roles.
+ */
+export function renderFullManual({
+  container,
+  rolesMap,
+  activePartFilter = 'all',
+  scrollTargetId = null
+}) {
+  if (!container) return;
+  container.innerHTML = '';
+
+  const partsConfig = [
+    {
+      roleId: 'homeowner',
+      partNum: 1,
+      roman: 'I',
+      title: 'Homeowner Application Guide',
+      subtitle: 'Step-by-step procedures for Homeowners registering an account, posting household job listings, reviewing worker applicants, issuing Digital Village Passes, and managing bookings.'
+    },
+    {
+      roleId: 'kasambahay',
+      partNum: 2,
+      roman: 'II',
+      title: 'Kasambahay (Worker) Application Guide',
+      subtitle: 'Step-by-step procedures for Household Workers registering, completing identity & liveness verification, uploading clearances, generating a profile CV, applying for jobs, and presenting Digital Village Passes.'
+    },
+    {
+      roleId: 'admin',
+      partNum: 3,
+      roman: 'III',
+      title: 'Admin & Barangay Control Panel',
+      subtitle: 'Step-by-step operational procedures for Barangay Reviewers and Super Administrators managing verification queues, AI/OCR review, user access controls, penalty points, and emergency broadcasts.'
+    }
+  ];
+
+  const visibleParts = activePartFilter === 'all'
+    ? partsConfig
+    : partsConfig.filter(p => p.roleId === activePartFilter);
+
+  const wrapper = document.createElement('div');
+  wrapper.className = 'full-manual-wrapper';
+
+  // 1. Top Control Toolbar (Non-Print)
+  const toolbar = document.createElement('div');
+  toolbar.className = 'full-manual-toolbar no-print';
+  toolbar.innerHTML = `
+    <div class="full-manual-toolbar-left">
+      <a href="#/homeowner/01-registration-and-profile/1" class="doc-action-pill back-to-interactive">
+        ${getIconSvg('chevron-left')}
+        <span>Step-by-Step Viewer</span>
+      </a>
+      <div class="part-filter-group" role="group" aria-label="Filter manual parts">
+        <a href="#/full-manual" class="part-filter-btn ${activePartFilter === 'all' ? 'active' : ''}">All Flows (Complete Manual)</a>
+        <a href="#/full-manual/homeowner" class="part-filter-btn ${activePartFilter === 'homeowner' ? 'active' : ''}">Homeowner</a>
+        <a href="#/full-manual/kasambahay" class="part-filter-btn ${activePartFilter === 'kasambahay' ? 'active' : ''}">Kasambahay</a>
+        <a href="#/full-manual/admin" class="part-filter-btn ${activePartFilter === 'admin' ? 'active' : ''}">Admin</a>
+      </div>
+    </div>
+    <div class="full-manual-toolbar-right">
+      <a href="./SerbiSure-User-Manual.docx" download="SerbiSure-User-Manual.docx" class="doc-action-pill primary-download">
+        ${getIconSvg('download')}
+        <span>Download Word (.docx)</span>
+      </a>
+      <button type="button" class="doc-action-pill print-manual-btn" id="print-full-manual-btn">
+        ${getIconSvg('printer')}
+        <span>Print / Save PDF</span>
+      </button>
+    </div>
+  `;
+  wrapper.appendChild(toolbar);
+
+  const printBtn = toolbar.querySelector('#print-full-manual-btn');
+  if (printBtn) {
+    printBtn.addEventListener('click', () => window.print());
+  }
+
+  // Calculate deterministic page numbers for each module & step in the Table of Contents
+  let logicalPage = 1;
+  const pageNumberMap = new Map();
+
+  for (const part of visibleParts) {
+    const roleData = rolesMap[part.roleId];
+    if (!roleData) continue;
+    pageNumberMap.set(`part-${part.roleId}`, logicalPage);
+    for (let mIdx = 0; mIdx < roleData.modules.length; mIdx++) {
+      const mod = roleData.modules[mIdx];
+      pageNumberMap.set(`mod-${part.roleId}-${mod.folder}`, logicalPage);
+      for (let sIdx = 0; sIdx < mod.steps.length; sIdx++) {
+        const step = mod.steps[sIdx];
+        pageNumberMap.set(`step-${part.roleId}-${mod.folder}-${step.number}`, logicalPage);
+        logicalPage++;
+      }
+    }
+  }
+
+  // 2. Classic Document Sheet: Table of Contents (Exact match to professional User Manual layout)
+  const tocSheet = document.createElement('section');
+  tocSheet.className = 'manual-doc-sheet toc-sheet';
+  tocSheet.id = 'manual-toc-top';
+  tocSheet.setAttribute('aria-labelledby', 'current-step-heading');
+
+  let tocEntriesHtml = '';
+  for (const part of visibleParts) {
+    const roleData = rolesMap[part.roleId];
+    if (!roleData) continue;
+    const partPage = pageNumberMap.get(`part-${part.roleId}`) || 1;
+    const partAnchor = `doc-part-${part.roleId}`;
+
+    tocEntriesHtml += `
+      <div class="toc-part-block">
+        <div class="toc-row toc-level-part">
+          <a href="#/full-manual/${activePartFilter}/${partAnchor}" data-scroll-target="${partAnchor}" class="toc-link">
+            <span class="toc-title">${escapeHtml(part.title)}</span>
+            <span class="toc-dots" aria-hidden="true"></span>
+            <span class="toc-page">${partPage}</span>
+          </a>
+        </div>
+    `;
+
+    roleData.modules.forEach((mod) => {
+      const modAnchor = `doc-mod-${part.roleId}-${mod.folder}`;
+      const modPage = pageNumberMap.get(`mod-${part.roleId}-${mod.folder}`) || 1;
+
+      tocEntriesHtml += `
+        <div class="toc-row toc-level-module">
+          <a href="#/full-manual/${activePartFilter}/${modAnchor}" data-scroll-target="${modAnchor}" class="toc-link">
+            <span class="toc-title">${escapeHtml(mod.title)}</span>
+            <span class="toc-dots" aria-hidden="true"></span>
+            <span class="toc-page">${modPage}</span>
+          </a>
+        </div>
+      `;
+
+      mod.steps.forEach((step) => {
+        const stepAnchor = `doc-step-${part.roleId}-${mod.folder}-${step.number}`;
+        const stepPage = pageNumberMap.get(`step-${part.roleId}-${mod.folder}-${step.number}`) || modPage;
+
+        tocEntriesHtml += `
+          <div class="toc-row toc-level-step">
+            <a href="#/full-manual/${activePartFilter}/${stepAnchor}" data-scroll-target="${stepAnchor}" class="toc-link">
+              <span class="toc-title">${escapeHtml(step.title)}</span>
+              <span class="toc-dots" aria-hidden="true"></span>
+              <span class="toc-page">${stepPage}</span>
+            </a>
+          </div>
+        `;
+      });
+    });
+
+    tocEntriesHtml += `</div>`;
+  }
+
+  tocSheet.innerHTML = `
+    <div class="doc-sheet-running-header">
+      <span class="running-header-title">SerbiSure User Manual</span>
+    </div>
+    <h1 class="doc-sheet-main-title" id="current-step-heading" tabindex="-1">Table of Contents</h1>
+    <p class="doc-sheet-intro">Below is the complete table of contents for the manual:</p>
+    <nav class="toc-entries-container" aria-label="Manual Table of Contents">
+      ${tocEntriesHtml}
+    </nav>
+    <p class="doc-sheet-outro">The following pages are detailed sections from the manual.</p>
+    <div class="doc-sheet-running-footer">
+      <span>SerbiSure-User-Manual.doc</span>
+      <span>© 2026 SerbiSure</span>
+    </div>
+  `;
+  wrapper.appendChild(tocSheet);
+
+  // 3. Detailed Step-by-Step Sections (Printed Paper Document Sheets)
+  for (const part of visibleParts) {
+    const roleData = rolesMap[part.roleId];
+    if (!roleData) continue;
+
+    const partSection = document.createElement('section');
+    partSection.className = 'manual-part-section';
+    partSection.id = `doc-part-${part.roleId}`;
+
+    roleData.modules.forEach((mod, mIdx) => {
+      const modNum = `${part.partNum}.${mIdx + 1}`;
+      const modPage = pageNumberMap.get(`mod-${part.roleId}-${mod.folder}`) || 1;
+
+      const modSheet = document.createElement('article');
+      modSheet.className = 'manual-doc-sheet module-doc-sheet';
+      modSheet.id = `doc-mod-${part.roleId}-${mod.folder}`;
+
+      const partIntroHtml = mIdx === 0 ? `
+        <div class="doc-part-inline-header">
+          <h2 class="doc-part-heading">${escapeHtml(part.title)}</h2>
+          <p class="doc-part-desc">${escapeHtml(part.subtitle)}</p>
+        </div>
+      ` : '';
+
+      const modHeader = document.createElement('header');
+      modHeader.className = 'doc-module-header';
+      modHeader.innerHTML = `
+        <div class="doc-sheet-running-header">
+          <span class="running-header-spacer no-print"></span>
+          <span class="running-header-title">SerbiSure User Manual</span>
+          <a href="#/full-manual/${activePartFilter}/manual-toc-top" data-scroll-target="manual-toc-top" class="toc-back-link no-print">↑ Table of Contents</a>
+        </div>
+        ${partIntroHtml}
+        <div class="doc-module-title-row">
+          <h3 class="doc-module-heading">${modNum}  ${escapeHtml(mod.title)}</h3>
+          <a href="${formatHash(roleData.id, mod.folder, mod.steps[0] ? mod.steps[0].number : 1)}" class="open-interactive-link no-print">
+            Interactive View ›
+          </a>
+        </div>
+        ${mod.overview ? `<p class="doc-module-overview">${escapeHtml(mod.overview)}</p>` : ''}
+      `;
+      modSheet.appendChild(modHeader);
+
+      const stepsList = document.createElement('div');
+      stepsList.className = 'doc-steps-list';
+
+      mod.steps.forEach((step) => {
+        const stepCode = `${modNum}.${step.index}`;
+        const stepBlock = document.createElement('div');
+        stepBlock.className = 'doc-step-block';
+        stepBlock.id = `doc-step-${part.roleId}-${mod.folder}-${step.number}`;
+
+        let stepHtml = '';
+        if (step.extension === 'txt') {
+          stepHtml = `<div class="plain-text-body" style="white-space:pre-wrap;">${escapeHtml(step.rawContent)}</div>`;
+        } else {
+          let md = step.rawContent;
+          const lines = md.split('\n');
+          if (lines.length > 0 && lines[0].trim().startsWith('#')) {
+            lines.shift();
+            md = lines.join('\n').trim();
+          }
+          stepHtml = renderMarkdown(md);
+        }
+
+        const expectedScreenshotPath = `docs/${roleData.id}/${mod.folder}/screenshots/${step.number}.png`;
+        const isAdminRole = roleData.id === 'admin';
+
+        stepBlock.innerHTML = `
+          <div class="doc-step-header">
+            <h4 class="doc-step-title">
+              <span class="doc-step-num">${stepCode}</span>
+              <span>${escapeHtml(step.title)}</span>
+            </h4>
+            <a href="${formatHash(roleData.id, mod.folder, step.number)}" class="doc-step-jump-link no-print" title="View Step ${step.index} in Interactive Viewer">
+              Step ${step.index} ›
+            </a>
+          </div>
+          <div class="doc-step-body-flow">
+            <div class="doc-step-instructions markdown-body">
+              ${stepHtml}
+            </div>
+            <div class="doc-step-figure-wrap ${isAdminRole ? 'landscape-fig' : 'portrait-fig'}">
+              ${step.hasScreenshot && step.screenshotUrl ? `
+                <figure class="doc-screenshot-figure">
+                  <div class="doc-screenshot-frame">
+                    <img
+                      class="doc-screenshot-img"
+                      src="${step.screenshotUrl}"
+                      alt="${escapeHtml(roleData.label)} — ${escapeHtml(mod.title)} — Step ${step.index}: ${escapeHtml(step.title)}"
+                    />
+                  </div>
+                  <figcaption class="doc-screenshot-caption">
+                    Figure ${stepCode}: ${escapeHtml(step.title)}
+                  </figcaption>
+                </figure>
+              ` : `
+                <div class="doc-screenshot-placeholder">
+                  <div class="doc-placeholder-header">
+                    ${getIconSvg('image')}
+                    <span>Figure ${stepCode} — Screen Capture</span>
+                  </div>
+                  <p class="doc-placeholder-sub">Screenshot coming soon (<code>${escapeHtml(expectedScreenshotPath)}</code>).</p>
+                </div>
+              `}
+            </div>
+          </div>
+        `;
+
+        if (step.hasScreenshot && step.screenshotUrl) {
+          const imgEl = stepBlock.querySelector('.doc-screenshot-img');
+          if (imgEl) {
+            imgEl.addEventListener('click', () => {
+              openLightbox({
+                src: step.screenshotUrl,
+                alt: `Step ${step.index}: ${step.title}`,
+                caption: `${roleData.label} › ${mod.title} › Step ${step.index}: ${step.title}`,
+                triggerElement: imgEl
+              });
+            });
+          }
+        }
+
+        stepsList.appendChild(stepBlock);
+      });
+
+      modSheet.appendChild(stepsList);
+
+      const sheetFooter = document.createElement('footer');
+      sheetFooter.className = 'doc-sheet-running-footer';
+      sheetFooter.innerHTML = `
+        <span>SerbiSure-User-Manual.doc</span>
+        <span>© 2026 SerbiSure  |  Page ${modPage}</span>
+      `;
+      modSheet.appendChild(sheetFooter);
+
+      partSection.appendChild(modSheet);
+    });
+
+    wrapper.appendChild(partSection);
+  }
+
+  // Wire smooth internal TOC scrolling links
+  wrapper.querySelectorAll('[data-scroll-target]').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      const targetId = link.getAttribute('data-scroll-target');
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        e.preventDefault();
+        history.replaceState(null, '', link.getAttribute('href'));
+        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  container.appendChild(wrapper);
+
+  // If a specific target section anchor was requested in URL, scroll to it
+  if (scrollTargetId) {
+    setTimeout(() => {
+      const targetEl = document.getElementById(scrollTargetId);
+      if (targetEl) {
+        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 30);
+  } else {
+    setTimeout(() => {
+      const mainHeading = document.getElementById('current-step-heading');
+      if (mainHeading) mainHeading.focus({ preventScroll: true });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 10);
+  }
+}
+

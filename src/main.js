@@ -1,7 +1,7 @@
 // src/main.js
 import { loadManualContent } from './content-loader.js';
 import { parseHash, formatHash, resolveNavigation } from './navigation.js';
-import { renderRoleTabs, renderModuleList, renderMobileModuleSelect, renderMainContent } from './render.js';
+import { renderRoleTabs, renderModuleList, renderMobileModuleSelect, renderMainContent, renderFullManual } from './render.js';
 import { initLightbox } from './lightbox.js';
 
 let manualData = null;
@@ -106,7 +106,50 @@ function bootstrap() {
 
   function renderCurrentView() {
     const { roles } = manualData;
-    const { role: reqRole, module: reqModule, step: reqStep } = parseHash(window.location.hash);
+    const rawHash = window.location.hash || '';
+    const cleanParts = rawHash.replace(/^#\/?/, '').trim().split('/').filter(Boolean);
+
+    if (cleanParts[0] && cleanParts[0].toLowerCase() === 'full-manual') {
+      const validFilters = ['all', 'homeowner', 'kasambahay', 'admin'];
+      const partArg = cleanParts[1] ? cleanParts[1].toLowerCase() : 'all';
+      const activePartFilter = validFilters.includes(partArg) ? partArg : 'all';
+      const scrollTargetId = validFilters.includes(partArg) ? (cleanParts[2] || null) : (cleanParts[1] || null);
+      const sidebarRole = activePartFilter === 'all' ? 'homeowner' : activePartFilter;
+
+      // 1. Render Top Role Tabs
+      renderRoleTabs(roleTabsContainer, roles, sidebarRole);
+
+      // 2. Render Sidebar Module List with Full Manual highlighted
+      renderModuleList(
+        moduleNavContainer,
+        roles[sidebarRole] ? roles[sidebarRole].modules : [],
+        sidebarRole,
+        null,
+        () => closeDrawer(false),
+        true
+      );
+
+      // 3. Render Mobile Module Select Dropdown
+      renderMobileModuleSelect(
+        mobileModuleSelect,
+        roles[sidebarRole] ? roles[sidebarRole].modules : [],
+        sidebarRole,
+        null
+      );
+
+      // 4. Render Full Manual Document & Table of Contents View
+      renderFullManual({
+        container: contentDisplayArea,
+        rolesMap: roles,
+        activePartFilter,
+        scrollTargetId
+      });
+
+      closeDrawer(false);
+      return;
+    }
+
+    const { role: reqRole, module: reqModule, step: reqStep } = parseHash(rawHash);
 
     const resolved = resolveNavigation(roles, reqRole, reqModule, reqStep);
 
@@ -125,7 +168,8 @@ function bootstrap() {
       resolved.roleData ? resolved.roleData.modules : [],
       resolved.role,
       resolved.module,
-      () => closeDrawer(false)
+      () => closeDrawer(false),
+      false
     );
 
     // 3. Render Mobile Module Select Dropdown
