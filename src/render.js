@@ -553,7 +553,53 @@ export function renderFullManual({
 
   const printBtn = toolbar.querySelector('#print-full-manual-btn');
   if (printBtn) {
-    printBtn.addEventListener('click', () => window.print());
+    printBtn.addEventListener('click', async () => {
+      const originalHtml = printBtn.innerHTML;
+      try {
+        printBtn.setAttribute('disabled', 'true');
+        printBtn.style.opacity = '0.75';
+        printBtn.innerHTML = `
+          <svg class="spinner-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="animation: spin 1s linear infinite;">
+            <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+          </svg>
+          <span>Loading figures...</span>
+        `;
+
+        // Preload and decode every screenshot image before opening print preview dialog
+        const images = Array.from(document.querySelectorAll('.doc-screenshot-img'));
+        let loadedCount = 0;
+        await Promise.all(images.map(img => {
+          return new Promise(resolve => {
+            function onDone() {
+              loadedCount++;
+              const label = printBtn.querySelector('span');
+              if (label) label.textContent = `Preparing figures (${loadedCount}/${images.length})...`;
+              if (typeof img.decode === 'function') {
+                img.decode().catch(() => {}).then(resolve);
+              } else {
+                resolve();
+              }
+            }
+            if (img.complete && img.naturalWidth > 0) {
+              onDone();
+            } else {
+              img.addEventListener('load', onDone, { once: true });
+              img.addEventListener('error', resolve, { once: true });
+            }
+          });
+        }));
+
+        await new Promise(r => setTimeout(r, 200));
+        window.print();
+      } catch (err) {
+        console.error('Print preparation error:', err);
+        window.print();
+      } finally {
+        printBtn.removeAttribute('disabled');
+        printBtn.style.opacity = '';
+        printBtn.innerHTML = originalHtml;
+      }
+    });
   }
 
   // Calculate deterministic page numbers for each module & step in the Table of Contents
@@ -727,7 +773,7 @@ export function renderFullManual({
               Step ${step.index} ›
             </a>
           </div>
-          <div class="doc-step-body-flow">
+          <div class="doc-step-body-flow ${isAdminRole ? 'has-landscape-fig' : 'has-portrait-fig'}">
             <div class="doc-step-instructions markdown-body">
               ${stepHtml}
             </div>
@@ -739,6 +785,8 @@ export function renderFullManual({
                       class="doc-screenshot-img"
                       src="${step.screenshotUrl}"
                       alt="${escapeHtml(roleData.label)} — ${escapeHtml(mod.title)} — Step ${step.index}: ${escapeHtml(step.title)}"
+                      loading="eager"
+                      decoding="sync"
                     />
                   </div>
                   <figcaption class="doc-screenshot-caption">

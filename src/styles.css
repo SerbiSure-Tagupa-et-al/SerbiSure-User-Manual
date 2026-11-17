@@ -1976,11 +1976,22 @@ body.drawer-open {
   }
 }
 
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 /* Print / Save as PDF Stylesheet (True 1-inch US Letter Page Output) */
 @media print {
   @page {
     size: letter portrait;
-    margin: 0.75in 0.85in;
+    margin: 0.65in 0.75in;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
   }
 
   .app-header,
@@ -2020,9 +2031,82 @@ body.drawer-open {
     break-after: page;
   }
 
+  /* Reliable flexbox layout in print mode to prevent CSS Grid pagination dropping cells */
+  .doc-step-body-flow {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+  }
+
+  .doc-step-body-flow.has-landscape-fig {
+    flex-direction: column !important;
+  }
+
+  .doc-step-instructions {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+  }
+
+  .doc-step-figure-wrap {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    flex-shrink: 0 !important;
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  .doc-step-figure-wrap.portrait-fig {
+    width: 200px !important;
+    max-width: 200px !important;
+  }
+
+  .doc-step-figure-wrap.landscape-fig {
+    width: 100% !important;
+    max-width: 440px !important;
+    margin: 8px auto 0 !important;
+  }
+
+  .doc-screenshot-figure {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    display: block !important;
+    visibility: visible !important;
+    margin: 0 !important;
+  }
+
+  .doc-screenshot-frame {
+    display: block !important;
+    background-color: #F8FAFC !important;
+    border: 1px solid #C8CDD5 !important;
+    padding: 4px !important;
+  }
+
+  .doc-screenshot-img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 290px !important;
+    object-fit: contain !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .doc-screenshot-caption {
+    page-break-before: avoid !important;
+    break-before: avoid !important;
+    display: block !important;
+  }
+
+  .doc-step-header {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+
   .doc-step-block {
-    page-break-inside: avoid;
-    break-inside: avoid;
+    page-break-inside: auto !important;
+    break-inside: auto !important;
   }
 }
 
