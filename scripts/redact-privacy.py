@@ -254,6 +254,129 @@ REDACTION_SHAPES = {
         {"type": "circle", "cx": 95.0, "cy": 165.0, "r": 48.5},  # Top profile avatar
         {"type": "circle", "cx": 59.0, "cy": 701.0, "r": 23.5},  # Bottom reviewer avatar
     ],
+
+    # =========================================================================
+    # NEW MODULES: EXPLORE & SAVED, NOTIFICATIONS/SETTINGS, DOLE CONTRACT
+    # =========================================================================
+    **{
+        f"docs/{role}/{folder_explore}/screenshots/1.jpg": [
+            {"type": "circle", "cx": 73.5, "cy": 230.5, "r": 29.0},
+            {"type": "swipe_card_449", "tutorial_modal_box": None},
+            {"type": "highlight_rect", "box": (54, 128, 396, 192), "radius": 28},
+            {"type": "highlight_circle", "cx": 426.5, "cy": 584.5, "r": 23.0},
+            {"type": "highlight_rect", "box": (251, 734, 395, 786), "radius": 24},
+            {"type": "highlight_circle", "cx": 144.5, "cy": 900.5, "r": 30.0},
+        ]
+        for role, folder_explore in [
+            ("homeowner", "09-explore-and-saved-swipe-deck"),
+            ("kasambahay", "11-explore-and-saved-swipe-deck"),
+        ]
+    },
+    **{
+        f"docs/{role}/{folder_explore}/screenshots/2.jpg": [
+            {"type": "circle", "cx": 73.5, "cy": 230.5, "r": 29.0},
+            {"type": "circle", "cx": 59.5, "cy": 443.0, "r": 34.0},
+            {"type": "highlight_rect", "box": (380, 412, 422, 462), "radius": 12},
+            {"type": "highlight_rect", "box": (22, 826, 427, 896), "radius": 28},
+        ]
+        for role, folder_explore in [
+            ("homeowner", "09-explore-and-saved-swipe-deck"),
+            ("kasambahay", "11-explore-and-saved-swipe-deck"),
+        ]
+    },
+    **{
+        f"docs/{role}/{folder_explore}/screenshots/3.jpg": [
+            {"type": "circle", "cx": 73.5, "cy": 230.5, "r": 29.0},
+            {"type": "circle", "cx": 74.0, "cy": 342.0, "r": 29.5},
+            {"type": "highlight_rect", "box": (222, 133, 392, 189), "radius": 26},
+            {"type": "highlight_rect", "box": (190, 456, 407, 516), "radius": 26},
+        ]
+        for role, folder_explore in [
+            ("homeowner", "09-explore-and-saved-swipe-deck"),
+            ("kasambahay", "11-explore-and-saved-swipe-deck"),
+        ]
+    },
+    **{
+        f"docs/{role}/{folder_settings}/screenshots/1.jpg": [
+            {"type": "highlight_circle", "cx": 404.0, "cy": 71.0, "r": 26.0},
+            {"type": "highlight_rect", "box": (248, 148, 430, 182), "radius": 14},
+        ]
+        for role, folder_settings in [
+            ("homeowner", "10-notifications-language-and-settings"),
+            ("kasambahay", "12-notifications-language-and-settings"),
+        ]
+    },
+    **{
+        f"docs/{role}/{folder_settings}/screenshots/2.jpg": [
+            {"type": "circle", "cx": 83.0, "cy": 104.0, "r": 39.0, "clip_y": (105, 145), "preserve_green_badge": True},
+            {"type": "rounded_rect", "box": (143, 132, 283, 154), "radius": 6},
+            {"type": "highlight_rect", "box": (38, 540, 412, 608), "radius": 18},
+            {"type": "highlight_rect", "box": (262, 624, 415, 812), "radius": 20},
+        ]
+        for role, folder_settings in [
+            ("homeowner", "10-notifications-language-and-settings"),
+            ("kasambahay", "12-notifications-language-and-settings"),
+        ]
+    },
+    **{
+        f"docs/{role}/{folder_settings}/screenshots/3.jpg": [
+            {"type": "highlight_rect", "box": (28, 146, 421, 284), "radius": 22},
+            {"type": "highlight_rect", "box": (28, 342, 421, 466), "radius": 22},
+        ]
+        for role, folder_settings in [
+            ("homeowner", "10-notifications-language-and-settings"),
+            ("kasambahay", "12-notifications-language-and-settings"),
+        ]
+    },
+    **{
+        f"docs/{role}/{folder_settings}/screenshots/4.jpg": [
+            {"type": "circle", "cx": 73.5, "cy": 230.5, "r": 29.0},
+            {"type": "swipe_card_449", "tutorial_modal_box": (18, 602, 431, 852)},
+            {"type": "highlight_rect", "box": (18, 602, 431, 850), "radius": 26},
+            {"type": "highlight_circle", "cx": 144.5, "cy": 900.5, "r": 34.0},
+        ]
+        for role, folder_settings in [
+            ("homeowner", "10-notifications-language-and-settings"),
+            ("kasambahay", "12-notifications-language-and-settings"),
+        ]
+    },
+    **{
+        f"docs/{role}/{folder_settings}/screenshots/5.jpg": [
+            {"type": "highlight_rect", "box": (12, 180, 437, 294), "radius": 18},
+            {"type": "highlight_rect", "box": (30, 578, 268, 700), "radius": 24},
+        ]
+        for role, folder_settings in [
+            ("homeowner", "10-notifications-language-and-settings"),
+            ("kasambahay", "12-notifications-language-and-settings"),
+        ]
+    },
+    **{
+        f"docs/{role}/{folder_dole}/screenshots/1.png": [
+            {"type": "highlight_rect", "box": (26, 325, 424, 535), "radius": 16},
+        ]
+        for role, folder_dole in [
+            ("homeowner", "11-dole-contract-and-booking-limits"),
+            ("kasambahay", "13-dole-contract-and-booking-limits"),
+        ]
+    },
+    **{
+        f"docs/{role}/{folder_dole}/screenshots/2.png": [
+            {"type": "highlight_rect", "box": (26, 325, 424, 535), "radius": 16},
+        ]
+        for role, folder_dole in [
+            ("homeowner", "11-dole-contract-and-booking-limits"),
+            ("kasambahay", "13-dole-contract-and-booking-limits"),
+        ]
+    },
+    **{
+        f"docs/{role}/{folder_dole}/screenshots/3.png": [
+            {"type": "highlight_rect", "box": (20, 648, 430, 768), "radius": 16},
+        ]
+        for role, folder_dole in [
+            ("homeowner", "11-dole-contract-and-booking-limits"),
+            ("kasambahay", "13-dole-contract-and-booking-limits"),
+        ]
+    },
 }
 
 
@@ -275,7 +398,7 @@ def normalized_blur_rgb(img_arr, src_mask_arr, radius=20):
     return np.clip(out, 0, 255)
 
 
-def apply_circle_blur(img, cx, cy, r, preserve_badge=False, clip_y=None):
+def apply_circle_blur(img, cx, cy, r, preserve_badge=False, preserve_green_badge=False, clip_y=None):
     """
     Blurs a circular profile avatar at (cx, cy) with radius r using normalized convolution
     and 4x supersampled anti-aliased circular masking.
@@ -308,15 +431,19 @@ def apply_circle_blur(img, cx, cy, r, preserve_badge=False, clip_y=None):
     mask_im = mask_ss.resize((cw, ch), Image.Resampling.LANCZOS)
     mask_arr = np.array(mask_im, dtype=np.float32) / 255.0
 
-    # Optionally preserve the small yellow clock verification badge on the bottom-right rim
-    if preserve_badge:
+    # Optionally preserve the small yellow clock or green check verification badge on the bottom-right rim
+    if preserve_badge or preserve_green_badge:
         yy, xx = np.mgrid[y1:y2, x1:x2]
-        in_br = (xx > cx + r * 0.25) & (yy > cy + r * 0.25)
+        in_br = (xx > cx + r * 0.15) & (yy > cy + r * 0.15)
         R, G, B = crop_arr[:, :, 0], crop_arr[:, :, 1], crop_arr[:, :, 2]
-        is_yellow_badge = in_br & (R > 190) & (G > 140) & (R - B > 70)
-        if np.any(is_yellow_badge):
-            badge_im = Image.fromarray((is_yellow_badge.astype(np.uint8) * 255), mode="L")
-            badge_im = badge_im.filter(ImageFilter.MaxFilter(3)).filter(ImageFilter.GaussianBlur(radius=0.8))
+        is_badge = np.zeros_like(R, dtype=bool)
+        if preserve_badge:
+            is_badge |= in_br & (R > 190) & (G > 140) & (R - B > 70)
+        if preserve_green_badge:
+            is_badge |= in_br & (G > 140) & (G - R > 35)
+        if np.any(is_badge):
+            badge_im = Image.fromarray((is_badge.astype(np.uint8) * 255), mode="L")
+            badge_im = badge_im.filter(ImageFilter.MaxFilter(5)).filter(ImageFilter.GaussianBlur(radius=0.8))
             badge_mask = np.array(badge_im, dtype=np.float32) / 255.0
             mask_arr = np.clip(mask_arr * (1.0 - badge_mask), 0.0, 1.0)
 
@@ -429,12 +556,117 @@ def apply_swipe_card_blur(img, top_pill, bottom_btn):
     img.paste(Image.fromarray(np.clip(final_arr, 0, 255).astype(np.uint8)), (0, 0))
 
 
+def apply_swipe_card_blur_449(img, tutorial_modal_box=None):
+    """
+    Blurs only the background photo on a 449x1024 Explore swipe card while keeping all overlaid
+    white text, tag pills, See Details button, X/Heart buttons, and any tutorial modal 100% sharp.
+    """
+    w, h = img.size
+    orig_arr = np.array(img, dtype=np.float32)
+
+    ss = 4
+    card_ss = Image.new("L", (w * ss, h * ss), 0)
+    cdraw = ImageDraw.Draw(card_ss)
+    cdraw.rounded_rectangle((54 * ss, 342 * ss, 395 * ss, 385 * ss), radius=20 * ss, fill=255)
+    cdraw.rounded_rectangle((24 * ss, 356 * ss, 425 * ss, 803 * ss), radius=28 * ss, fill=255)
+    card_mask = np.array(card_ss.resize((w, h), Image.Resampling.LANCZOS), dtype=np.float32) / 255.0
+
+    ui_ss = Image.new("L", (w * ss, h * ss), 0)
+    udraw = ImageDraw.Draw(ui_ss)
+    # Left X & Right Heart circular buttons
+    udraw.ellipse(((22.0 - 22.0) * ss, (584.5 - 22.0) * ss, (22.0 + 22.0) * ss, (584.5 + 22.0) * ss), fill=255)
+    udraw.ellipse(((426.5 - 22.0) * ss, (584.5 - 22.0) * ss, (426.5 + 22.0) * ss, (584.5 + 22.0) * ss), fill=255)
+    # Top-left (i) View Profile pill
+    udraw.rounded_rectangle((58 * ss, 390 * ss, 200 * ss, 424 * ss), radius=16 * ss, fill=255)
+    # Three white tag pills ('Short-term', 'All-around', 'Stay-out')
+    udraw.rounded_rectangle((58 * ss, 690 * ss, 159 * ss, 718 * ss), radius=8 * ss, fill=255)
+    udraw.rounded_rectangle((166 * ss, 690 * ss, 263 * ss, 718 * ss), radius=8 * ss, fill=255)
+    udraw.rounded_rectangle((271 * ss, 690 * ss, 355 * ss, 718 * ss), radius=8 * ss, fill=255)
+    # Bottom-right 'See Details' button
+    udraw.rounded_rectangle((255 * ss, 738 * ss, 392 * ss, 783 * ss), radius=22 * ss, fill=255)
+    if tutorial_modal_box is not None:
+        tx1, ty1, tx2, ty2 = tutorial_modal_box
+        udraw.rounded_rectangle((tx1 * ss, ty1 * ss, tx2 * ss, ty2 * ss), radius=24 * ss, fill=255)
+    ui_mask = np.array(ui_ss.resize((w, h), Image.Resampling.LANCZOS), dtype=np.float32) / 255.0
+
+    text_mask = np.zeros((h, w), dtype=np.float32)
+    local_bg = np.array(img.filter(ImageFilter.GaussianBlur(radius=5)), dtype=np.float32)
+    max_text_y = 602 if tutorial_modal_box is not None else 688
+    text_boxes = [
+        (52, 520, 405, max_text_y),  # Card title, location, category, description
+        (355, 385, 398, 430),        # Bookmark icon
+    ]
+    if tutorial_modal_box is None:
+        text_boxes.append((52, 720, 190, 785))  # Price ("Php 600 / per day")
+
+    for tx1, ty1, tx2, ty2 in text_boxes:
+        roi_orig = orig_arr[ty1:ty2, tx1:tx2]
+        roi_bg = local_bg[ty1:ty2, tx1:tx2]
+        lum_orig = np.min(roi_orig, axis=2)
+        lum_bg = np.min(roi_bg, axis=2)
+        diff = lum_orig - lum_bg
+        a_white1 = np.clip((diff - 10.0) / 28.0, 0.0, 1.0) * np.clip((lum_orig - 100.0) / 40.0, 0.0, 1.0)
+        a_white2 = np.clip((lum_orig - 145.0) / 40.0, 0.0, 1.0)
+        a_orange = np.zeros_like(lum_orig)
+        if ty1 == 520:
+            pin_h = min(85, ty2 - ty1)
+            pin_roi = roi_orig[30:pin_h, 0:28]
+            pin_score = (pin_roi[:, :, 0] - pin_roi[:, :, 2]) - 40.0
+            a_orange[30:pin_h, 0:28] = np.clip(pin_score / 35.0, 0.0, 1.0)
+        text_mask[ty1:ty2, tx1:tx2] = np.maximum(np.maximum(a_white1, a_white2), a_orange)
+
+    keep_sharp_mask = np.clip(np.maximum(ui_mask, text_mask), 0.0, 1.0)
+    exclude_im = Image.fromarray((keep_sharp_mask * 255).astype(np.uint8), mode="L").filter(ImageFilter.MaxFilter(5))
+    exclude_src = np.array(exclude_im, dtype=np.float32) / 255.0
+    photo_src_mask = np.clip(card_mask * (1.0 - exclude_src), 0.0, 1.0)
+
+    blurred_card_arr = normalized_blur_rgb(orig_arr, photo_src_mask, radius=28)
+    blur_opacity = card_mask * (1.0 - keep_sharp_mask)
+    final_arr = orig_arr * (1.0 - blur_opacity[..., None]) + blurred_card_arr * blur_opacity[..., None]
+    img.paste(Image.fromarray(np.clip(final_arr, 0, 255).astype(np.uint8)), (0, 0))
+
+
+def apply_highlight_circle(img, cx, cy, r):
+    """
+    Draws a crisp, 4x supersampled anti-aliased blue highlight circle (#2563EB) with a subtle
+    white contrast halo around a circular UI element.
+    """
+    w, h = img.size
+    ss = 4
+    overlay = Image.new("RGBA", (w * ss, h * ss), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(overlay)
+    bbox = ((cx - r) * ss, (cy - r) * ss, (cx + r) * ss, (cy + r) * ss)
+    draw.ellipse(bbox, outline=(255, 255, 255, 215), width=int(6.5 * ss))
+    draw.ellipse(bbox, outline=(37, 99, 235, 255), width=int(3.5 * ss))
+    overlay_sm = overlay.resize((w, h), Image.Resampling.LANCZOS)
+    comp = Image.alpha_composite(img.convert("RGBA"), overlay_sm).convert("RGB")
+    img.paste(comp, (0, 0))
+
+
+def apply_highlight_rect(img, box, radius=16):
+    """
+    Draws a crisp, 4x supersampled anti-aliased blue highlight rounded-rectangle (#2563EB) with
+    a subtle white contrast halo around a rectangular UI element.
+    """
+    w, h = img.size
+    bx1, by1, bx2, by2 = box
+    ss = 4
+    overlay = Image.new("RGBA", (w * ss, h * ss), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(overlay)
+    bbox = (bx1 * ss, by1 * ss, bx2 * ss, by2 * ss)
+    draw.rounded_rectangle(bbox, radius=int(radius * ss), outline=(255, 255, 255, 215), width=int(6.5 * ss))
+    draw.rounded_rectangle(bbox, radius=int(radius * ss), outline=(37, 99, 235, 255), width=int(3.5 * ss))
+    overlay_sm = overlay.resize((w, h), Image.Resampling.LANCZOS)
+    comp = Image.alpha_composite(img.convert("RGBA"), overlay_sm).convert("RGB")
+    img.paste(comp, (0, 0))
+
+
 def main():
     repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     backup_root = os.path.join(repo_root, "_screenshots_backup")
     docs_root = os.path.join(repo_root, "docs")
 
-    # 1. Restore all 107 screenshots from pristine backup first
+    # 1. Restore all screenshots from pristine backup first
     restored_count = 0
     for root, _, files in os.walk(backup_root):
         for f in files:
@@ -447,7 +679,7 @@ def main():
                     restored_count += 1
     print(f"Restored {restored_count} pristine screenshots from _screenshots_backup/")
 
-    # 2. Apply exact shape redactions
+    # 2. Apply exact shape redactions and blue highlight encirclements
     processed_files = 0
     total_shapes = 0
 
@@ -467,12 +699,19 @@ def main():
                     s["cy"],
                     s["r"],
                     preserve_badge=s.get("preserve_badge", False),
+                    preserve_green_badge=s.get("preserve_green_badge", False),
                     clip_y=s.get("clip_y", None),
                 )
             elif stype == "rounded_rect":
                 apply_rounded_rect_blur(img, s["box"], radius=s.get("radius", 8))
             elif stype == "swipe_card":
                 apply_swipe_card_blur(img, s["top_pill"], s["bottom_btn"])
+            elif stype == "swipe_card_449":
+                apply_swipe_card_blur_449(img, tutorial_modal_box=s.get("tutorial_modal_box", None))
+            elif stype == "highlight_circle":
+                apply_highlight_circle(img, s["cx"], s["cy"], s["r"])
+            elif stype == "highlight_rect":
+                apply_highlight_rect(img, s["box"], radius=s.get("radius", 16))
             total_shapes += 1
 
         if doc_path.lower().endswith(".png"):
@@ -480,9 +719,9 @@ def main():
         else:
             img.save(doc_path, format="JPEG", quality=95, subsampling=0)
         processed_files += 1
-        print(f"Redacted {rel_path} ({len(shapes)} shape(s))")
+        print(f"Processed {rel_path} ({len(shapes)} shape(s))")
 
-    print(f"\nCompleted: {processed_files} files redacted with {total_shapes} exact frame shapes.")
+    print(f"\nCompleted: {processed_files} files processed with {total_shapes} exact frame shapes.")
 
 
 if __name__ == "__main__":

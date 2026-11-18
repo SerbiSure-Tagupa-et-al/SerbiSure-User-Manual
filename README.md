@@ -1,6 +1,6 @@
 # SerbiSure User Manual & Guide
 
-Written for SerbiSure app v2.1.5
+Written for SerbiSure app v2.1.7
 
 The official interactive, static user manual and operational guide for **SerbiSure**, serving three primary user roles:
 1. **🏠 Homeowner** — People seeking trusted household help.
@@ -52,9 +52,9 @@ npm run preview
 ```text
 SerbiSure-User-Manual/
 ├── docs/                      # Data-driven manual guides
-│   ├── homeowner/             # 8 modules (35 steps)
-│   ├── kasambahay/            # 10 modules (40 steps)
-│   └── admin/                 # 7 modules (28 steps)
+│   ├── homeowner/             # 11 modules (47 steps)
+│   ├── kasambahay/            # 13 modules (53 steps)
+│   └── admin/                 # 7 modules (29 steps)
 ├── public/
 │   └── branding/              # Official SerbiSure logo assets
 ├── src/
@@ -75,7 +75,7 @@ SerbiSure-User-Manual/
 ├── index.html                 # Semantic HTML shell
 ├── package.json
 ├── vite.config.js             # Assets inline limit: 0, relative base
-├── SCREENSHOT_CHECKLIST.md    # Master capture checklist (107 entries)
+├── SCREENSHOT_CHECKLIST.md    # Master capture checklist (129 entries)
 ├── CONTENT_REVIEW.md          # Source grounding & verification mapping
 └── CONTENT_AUTHORING.md       # Guide for adding screenshots & modules
 ```
