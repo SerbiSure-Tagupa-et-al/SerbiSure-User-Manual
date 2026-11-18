@@ -97,6 +97,32 @@ This checklist contains every screen to capture for the **SerbiSure User Manual*
 | - [x] | **3** | Agree on Dates in Chat | RE-CAPTURE: Employer chat with a worker, showing the booking-offer entry control before composing a dated offer. | `docs/homeowner/08-managing-own-posts/screenshots/3.png` |
 | - [x] | **4** | Cancel a Public Post | RE-CAPTURE: Cancel Post confirmation dialog with Remove this post from the public feed?, Keep Post and Cancel Post. | `docs/homeowner/08-managing-own-posts/screenshots/4.png` |
 
+### Module: Explore & Saved Swipe Deck (`homeowner/09-explore-and-saved-swipe-deck`)
+
+| Status | Step | Step Title | Screen to Capture / Preparation | Target Image Destination |
+| :---: | :---: | :--- | :--- | :--- |
+| - [x] | **1** | Swipe Through Candidates in Explore | Explore swipe deck card with Explore/Saved toggle, Heart save button, See Details and Briefcase tab encircled. | `docs/homeowner/09-explore-and-saved-swipe-deck/screenshots/1.png` |
+| - [x] | **2** | Inspect Role Details & Message Kasambahay | Explore role detail sheet with Bookmark ribbon and Message Kasambahay button encircled. | `docs/homeowner/09-explore-and-saved-swipe-deck/screenshots/2.png` |
+| - [x] | **3** | Review Saved Candidates in the Saved Tab | Saved tab selected showing Saved Kasambahay card with Chat and See Details buttons encircled. | `docs/homeowner/09-explore-and-saved-swipe-deck/screenshots/3.png` |
+
+### Module: Notifications, Language & Privacy Settings (`homeowner/10-notifications-language-and-settings`)
+
+| Status | Step | Step Title | Screen to Capture / Preparation | Target Image Destination |
+| :---: | :---: | :--- | :--- | :--- |
+| - [x] | **1** | Check In-App Notifications | Notifications sheet with top-right Bell badge and Mark all as read button encircled. | `docs/homeowner/10-notifications-language-and-settings/screenshots/1.png` |
+| - [x] | **2** | Switch Language (English, Tagalog, Bisaya) & Hide Phone Number | Profile Preferences showing Show Contact Number toggle and Language dropdown (English, Tagalog, Bisaya) encircled. | `docs/homeowner/10-notifications-language-and-settings/screenshots/2.png` |
+| - [x] | **3** | Open Support & Legal (App Tutorial & User Manual) | Profile settings showing Preferences and Support & Legal rows (App Tutorial and User Manual) encircled. | `docs/homeowner/10-notifications-language-and-settings/screenshots/3.png` |
+| - [x] | **4** | Follow the 6-Step Spotlight App Tutorial | Interactive 6-step spotlight App Tutorial overlay (1/6 Find a Kasambahay) and spotlighted Briefcase tab encircled. | `docs/homeowner/10-notifications-language-and-settings/screenshots/4.png` |
+| - [x] | **5** | Browse & Download the SerbiSure User Manual | In-app User Manual browser view with role tabs, Download Word (.docx) and Print / Save PDF encircled. | `docs/homeowner/10-notifications-language-and-settings/screenshots/5.png` |
+
+### Module: DOLE Contract & Booking Limits (`homeowner/11-dole-contract-and-booking-limits`)
+
+| Status | Step | Step Title | Screen to Capture / Preparation | Target Image Destination |
+| :---: | :---: | :--- | :--- | :--- |
+| - [x] | **1** | Monthly Short-Term Limit on Job Applications | Application not confirmed dialog explaining the 3 short-term bookings per month cap and DOLE contract transition. | `docs/homeowner/11-dole-contract-and-booking-limits/screenshots/1.png` |
+| - [x] | **2** | Monthly Short-Term Limit on Chat Booking Offers | Cannot Send Offer dialog in Booking Offer prompting a long-term DOLE contract engagement. | `docs/homeowner/11-dole-contract-and-booking-limits/screenshots/2.png` |
+| - [x] | **3** | Meet the Minimum Monthly Salary for Long-Term Contracts | Booking Offer Step 3 of 4 showing AGREED MONTHLY SALARY and Minimum: ₱6,500 / month validation encircled. | `docs/homeowner/11-dole-contract-and-booking-limits/screenshots/3.png` |
+
 
 # 🧹 Kasambahay Guides
 
@@ -190,6 +216,32 @@ This checklist contains every screen to capture for the **SerbiSure User Manual*
 | - [x] | **2** | Read Feedback on Your Profile | RE-CAPTURE: Personal Info with Reviews & Feedbacks selected, rating and positive-feedback summary visible. | `docs/kasambahay/10-completed-jobs-and-reviews/screenshots/2.png` |
 | - [x] | **3** | Review Your Experience with the Homeowner | RE-CAPTURE: Review form for the homeowner showing stars, YOUR EXPERIENCE and Submit Review. | `docs/kasambahay/10-completed-jobs-and-reviews/screenshots/3.png` |
 
+### Module: Explore & Saved Swipe Deck (`kasambahay/11-explore-and-saved-swipe-deck`)
+
+| Status | Step | Step Title | Screen to Capture / Preparation | Target Image Destination |
+| :---: | :---: | :--- | :--- | :--- |
+| - [x] | **1** | Browse Listings on the Explore Swipe Deck | Explore swipe deck card with Explore/Saved toggle, Heart save button, See Details and Briefcase tab encircled. | `docs/kasambahay/11-explore-and-saved-swipe-deck/screenshots/1.png` |
+| - [x] | **2** | View Full Role Details & Start a Chat | Explore detail sheet with Bookmark ribbon and primary chat button encircled. | `docs/kasambahay/11-explore-and-saved-swipe-deck/screenshots/2.png` |
+| - [x] | **3** | Manage Bookmarked Listings in the Saved Tab | Saved tab selected showing Saved card with Chat and See Details buttons encircled. | `docs/kasambahay/11-explore-and-saved-swipe-deck/screenshots/3.png` |
+
+### Module: Notifications, Language & Privacy Settings (`kasambahay/12-notifications-language-and-settings`)
+
+| Status | Step | Step Title | Screen to Capture / Preparation | Target Image Destination |
+| :---: | :---: | :--- | :--- | :--- |
+| - [x] | **1** | View Verification & Booking Notifications | Notifications sheet with top-right Bell badge and Mark all as read button encircled. | `docs/kasambahay/12-notifications-language-and-settings/screenshots/1.png` |
+| - [x] | **2** | Change App Language (English, Tagalog, Bisaya) & Phone Privacy | Profile Preferences showing Show Contact Number toggle and Language dropdown (English, Tagalog, Bisaya) encircled. | `docs/kasambahay/12-notifications-language-and-settings/screenshots/2.png` |
+| - [x] | **3** | Access App Tutorial & User Manual in Support & Legal | Profile settings showing Preferences and Support & Legal rows (App Tutorial and User Manual) encircled. | `docs/kasambahay/12-notifications-language-and-settings/screenshots/3.png` |
+| - [x] | **4** | Step Through the Interactive App Tutorial | Interactive 6-step spotlight App Tutorial overlay (1/6) and spotlighted Briefcase tab encircled. | `docs/kasambahay/12-notifications-language-and-settings/screenshots/4.png` |
+| - [x] | **5** | Read & Download the SerbiSure User Manual | In-app User Manual browser view with role tabs, Download Word (.docx) and Print / Save PDF encircled. | `docs/kasambahay/12-notifications-language-and-settings/screenshots/5.png` |
+
+### Module: DOLE Contract & Booking Limits (`kasambahay/13-dole-contract-and-booking-limits`)
+
+| Status | Step | Step Title | Screen to Capture / Preparation | Target Image Destination |
+| :---: | :---: | :--- | :--- | :--- |
+| - [x] | **1** | Monthly Short-Term Limit When Applying or Confirming | Application not confirmed dialog explaining the 3 short-term bookings per month cap and DOLE contract transition. | `docs/kasambahay/13-dole-contract-and-booking-limits/screenshots/1.png` |
+| - [x] | **2** | Transitioning from Short-Term to a Long-Term DOLE Contract | Cannot Send Offer dialog in Booking Offer prompting a long-term DOLE contract engagement. | `docs/kasambahay/13-dole-contract-and-booking-limits/screenshots/2.png` |
+| - [x] | **3** | Minimum Monthly Wage Protection (₱6,500 / Month) | Booking Offer Step 3 of 4 showing AGREED MONTHLY SALARY and Minimum: ₱6,500 / month validation encircled. | `docs/kasambahay/13-dole-contract-and-booking-limits/screenshots/3.png` |
+
 
 # 🏛️ Admin / Barangay Guides
 
@@ -258,7 +310,7 @@ This checklist contains every screen to capture for the **SerbiSure User Manual*
 
 
 ---
-**Total Steps in Manual**: 107 steps across all modules.
+**Total Steps in Manual**: 129 steps across all modules.
 
 ## New review and registration screens
 

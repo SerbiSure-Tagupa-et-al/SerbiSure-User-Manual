@@ -497,14 +497,14 @@ export function renderFullManual({
       partNum: 1,
       roman: 'I',
       title: 'Homeowner Application Guide',
-      subtitle: 'Step-by-step procedures for Homeowners registering an account, posting household job listings, reviewing worker applicants, issuing Digital Village Passes, and managing bookings.'
+      subtitle: 'Step-by-step procedures for Homeowners registering an account, posting household job listings, reviewing worker applicants, issuing Digital Village Passes, managing bookings, using the Explore & Saved swipe deck, configuring notifications, language (English/Tagalog/Bisaya), privacy & App Tutorial settings, and complying with DOLE contract & booking limits.'
     },
     {
       roleId: 'kasambahay',
       partNum: 2,
       roman: 'II',
       title: 'Kasambahay (Worker) Application Guide',
-      subtitle: 'Step-by-step procedures for Household Workers registering, completing identity & liveness verification, uploading clearances, generating a profile CV, applying for jobs, and presenting Digital Village Passes.'
+      subtitle: 'Step-by-step procedures for Household Workers registering, completing identity & liveness verification, uploading clearances, generating a profile CV, applying for jobs, presenting Digital Village Passes, using the Explore & Saved swipe deck, configuring notifications, language (English/Tagalog/Bisaya), privacy & App Tutorial settings, and reviewing DOLE contract & minimum wage rules.'
     },
     {
       roleId: 'admin',
